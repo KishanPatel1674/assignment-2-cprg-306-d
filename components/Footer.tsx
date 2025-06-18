@@ -4,4 +4,4 @@ export default function Footer() {
       <p>New Generation High School © 2025</p>
     </footer>
   );
-}
+} 
