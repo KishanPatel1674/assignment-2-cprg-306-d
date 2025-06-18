@@ -1,0 +1,57 @@
+import React, { useState } from "react";
+import { Student } from "../types";
+
+type AddStudentFormProps = {
+  onAddStudent: (student: Student) => void;
+};
+
+export default function AddStudentForm({ onAddStudent }: AddStudentFormProps) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [dob, setDob] = useState("");
+  const [grade, setGrade] = useState("");
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    onAddStudent({ firstName, lastName, dob, grade });
+
+    // Clear form inputs after adding student
+    setFirstName("");
+    setLastName("");
+    setDob("");
+    setGrade("");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={firstName}
+        onChange={e => setFirstName(e.target.value)}
+        placeholder="First Name"
+        required
+      />
+      <input
+        type="text"
+        value={lastName}
+        onChange={e => setLastName(e.target.value)}
+        placeholder="Last Name"
+        required
+      />
+      <input
+        type="date"
+        value={dob}
+        onChange={e => setDob(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        value={grade}
+        onChange={e => setGrade(e.target.value)}
+        placeholder="Grade"
+        required
+      />
+      <button type="submit">Add Student</button>
+    </form>
+  );
+}
