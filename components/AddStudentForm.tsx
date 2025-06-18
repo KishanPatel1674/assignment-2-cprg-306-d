@@ -14,6 +14,12 @@ export default function AddStudentForm({ onAddStudent }: AddStudentFormProps) {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
 
+  const nameRegex = /^[A-Za-z\s]+$/;
+  if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+    alert("Names should contain only letters and spaces. Numbers are not allowed.");
+    return;
+  }
+
   const parsedGrade = parseInt(grade);
   if (isNaN(parsedGrade) || parsedGrade < 1 || parsedGrade > 12) {
     alert("Grade must be a number between 1 and 12.");
