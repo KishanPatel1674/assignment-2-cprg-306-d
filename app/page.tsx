@@ -19,10 +19,10 @@ export default function HomePage() {
   }
 
   return (
-    <main>
-      <h1 style={{ textAlign: "center", color: "#333" }}>Student List</h1>
-      <AddStudentForm onAddStudent={addStudent} />
-      <StudentList students={students} />
-    </main>
-  );
+  <main style={{ paddingTop: "100px" }}>
+    <h1 style={{ textAlign: "center", color: "#333" }}>Add New Student</h1>
+    <AddStudentForm onAddStudent={addStudent} />
+    <StudentList students={students} />
+  </main>
+ );
 }
