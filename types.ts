@@ -3,4 +3,4 @@ export type Student = {
   lastName: string;
   dob: string;
   grade: string;
-};
+}; 
