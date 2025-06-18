@@ -27,36 +27,51 @@ export default function AddStudentForm({ onAddStudent }: AddStudentFormProps) {
   setDob("");
   setGrade("");
 }
-
-  return (
+return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={firstName}
-        onChange={e => setFirstName(e.target.value)}
-        placeholder="First Name"
-        required
-      />
-      <input
-        type="text"
-        value={lastName}
-        onChange={e => setLastName(e.target.value)}
-        placeholder="Last Name"
-        required
-      />
-      <input
-        type="date"
-        value={dob}
-        onChange={e => setDob(e.target.value)}
-        required
-      />
-      <input
-        type="text"
-        value={grade}
-        onChange={e => setGrade(e.target.value)}
-        placeholder="Grade"
-        required
-      />
+      <label>
+        First Name:
+        <input
+          type="text"
+          value={firstName}
+          onChange={e => setFirstName(e.target.value)}
+          placeholder="First Name"
+          required
+        />
+      </label>
+
+      <label>
+        Last Name:
+        <input
+          type="text"
+          value={lastName}
+          onChange={e => setLastName(e.target.value)}
+          placeholder="Last Name"
+          required
+        />
+      </label>
+
+      <label>
+        Date of Birth:
+        <input
+          type="date"
+          value={dob}
+          onChange={e => setDob(e.target.value)}
+          required
+        />
+      </label>
+
+      <label>
+        Grade (1–12):
+        <input
+          type="text"
+          value={grade}
+          onChange={e => setGrade(e.target.value)}
+          placeholder="Grade"
+          required
+        />
+      </label>
+
       <button type="submit">Add Student</button>
     </form>
   );
