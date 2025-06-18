@@ -4,6 +4,17 @@ import React, { useState } from "react";
 import StudentList from "../components/StudentList";
 import AddStudentForm from "../components/AddStudentForm";
 import { Student } from "../types";
+/**
+ * HomePage component
+ * This component manages the list of students displayed on the page.
+ * It initializes with a default list of students, and allows adding new students
+ * through the AddStudentForm component. The StudentList component renders the
+ * current list of students.
+ * 
+ * Inputs: None (initializes with hardcoded student data)
+ * Processing: Handles adding new student objects to state
+ * Output: Renders a form to add students and a list displaying all students
+ */
 
 export default function HomePage() {
   const [students, setStudents] = useState<Student[]>([
