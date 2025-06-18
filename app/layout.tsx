@@ -11,6 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+         <Navbar />
         {children}
         <footer style={{ marginTop: "30px", textAlign: "center" }}>
           <p>New Generation High School &copy; 2025</p>
