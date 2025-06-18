@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 import { Student } from "../types";
+/**
+ * AddStudentForm component
+ * This component provides a form for adding a new student.
+ * It manages form inputs for first name, last name, date of birth, and grade.
+ * It validates input before submitting the new student object to the parent component.
+ * 
+ * Inputs: User input via form fields (first name, last name, dob, grade)
+ * Processing: Validates names (letters/spaces only), grade (1 to 12), then calls onAddStudent
+ * Output: Calls onAddStudent callback with validated student data, clears form on submit
+ */
 
 type AddStudentFormProps = {
   onAddStudent: (student: Student) => void;
