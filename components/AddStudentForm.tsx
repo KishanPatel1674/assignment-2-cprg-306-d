@@ -12,15 +12,21 @@ export default function AddStudentForm({ onAddStudent }: AddStudentFormProps) {
   const [grade, setGrade] = useState("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    onAddStudent({ firstName, lastName, dob, grade });
+  e.preventDefault();
 
-    // Clear form inputs after adding student
-    setFirstName("");
-    setLastName("");
-    setDob("");
-    setGrade("");
+  const parsedGrade = parseInt(grade);
+  if (isNaN(parsedGrade) || parsedGrade < 1 || parsedGrade > 12) {
+    alert("Grade must be a number between 1 and 12.");
+    return;
   }
+
+  onAddStudent({ firstName, lastName, dob, grade: parsedGrade });
+
+  setFirstName("");
+  setLastName("");
+  setDob("");
+  setGrade("");
+}
 
   return (
     <form onSubmit={handleSubmit}>
